@@ -14,7 +14,7 @@ export const asyncRouterMap = [
         path: '/dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/Dashboard'),
-        meta: { title: '仪表盘', icon: 'dashboard', hiddenHeaderContent: false, keepAlive: false }
+        meta: { title: '主页', icon: 'dashboard', hiddenHeaderContent: false, keepAlive: false }
       },
 
       // posts
@@ -35,19 +35,19 @@ export const asyncRouterMap = [
             path: '/posts/write',
             name: 'PostEdit',
             component: () => import('@/views/post/PostEdit'),
-            meta: { title: '写文章', hiddenHeaderContent: false, keepAlive: false }
+            meta: { title: '新建文章', hiddenHeaderContent: false, keepAlive: false }
           },
           {
             path: '/categories',
             name: 'CategoryList',
             component: () => import('@/views/post/CategoryList'),
-            meta: { title: '分类目录', hiddenHeaderContent: false }
+            meta: { title: '目录分类', hiddenHeaderContent: false }
           },
           {
             path: '/tags',
             name: 'TagList',
             component: () => import('@/views/post/TagList'),
-            meta: { title: '标签', hiddenHeaderContent: false }
+            meta: { title: '标签分类', hiddenHeaderContent: false }
           }
         ]
       },
@@ -124,19 +124,19 @@ export const asyncRouterMap = [
             path: '/interface/themes',
             name: 'ThemeList',
             component: () => import('@/views/interface/ThemeList'),
-            meta: { title: '主题', hiddenHeaderContent: false }
-          },
-          {
-            path: '/interface/menus',
-            name: 'MenuList',
-            component: () => import('@/views/interface/MenuList'),
-            meta: { title: '菜单', hiddenHeaderContent: false }
+            meta: { title: '主题列表', hiddenHeaderContent: false }
           },
           {
             path: '/interface/themes/edit',
             name: 'ThemeEdit',
             component: () => import('@/views/interface/ThemeEdit'),
             meta: { title: '主题编辑', hiddenHeaderContent: false }
+          },
+          {
+            path: '/interface/menus',
+            name: 'MenuList',
+            component: () => import('@/views/interface/MenuList'),
+            meta: { title: '菜单管理', hiddenHeaderContent: false }
           }
         ]
       },
