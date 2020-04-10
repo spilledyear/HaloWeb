@@ -177,13 +177,13 @@ export const asyncRouterMap = [
             path: '/system/options',
             name: 'OptionForm',
             component: () => import('@/views/system/OptionForm'),
-            meta: { title: '博客设置', hiddenHeaderContent: false }
+            meta: { title: '设置', hiddenHeaderContent: false }
           },
           {
             path: '/system/tools',
             name: 'ToolList',
             component: () => import('@/views/system/ToolList'),
-            meta: { title: '小工具', hiddenHeaderContent: false }
+            meta: { title: '工具', hiddenHeaderContent: false }
           },
           {
             path: '/system/about',

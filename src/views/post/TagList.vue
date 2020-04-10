@@ -2,6 +2,33 @@
   <div>
     <a-row :gutter="12">
       <a-col
+        :xl="14"
+        :lg="14"
+        :md="14"
+        :sm="24"
+        :xs="24"
+        :style="{ 'padding-bottom': '12px' }"
+      >
+        <a-card title="所有标签" :bodyStyle="{ padding: '16px' }">
+          <a-empty v-if="tags.length==0"/>
+          <a-tooltip
+            placement="topLeft"
+            v-for="tag in tags"
+            :key="tag.id"
+            v-else
+          >
+            <template slot="title">
+              <span>{{ tag.postCount }} 篇文章</span>
+            </template>
+            <a-tag
+              color="blue"
+              style="margin-bottom: 8px"
+              @click="handleEditTag(tag)"
+            >{{ tag.name }}</a-tag>
+          </a-tooltip>
+        </a-card>
+      </a-col>
+      <a-col
         :xl="10"
         :lg="10"
         :md="10"
@@ -54,33 +81,6 @@
               </a-popconfirm>
             </a-form-item>
           </a-form>
-        </a-card>
-      </a-col>
-      <a-col
-        :xl="14"
-        :lg="14"
-        :md="14"
-        :sm="24"
-        :xs="24"
-        :style="{ 'padding-bottom': '12px' }"
-      >
-        <a-card title="所有标签" :bodyStyle="{ padding: '16px' }">
-          <a-empty v-if="tags.length==0"/>
-          <a-tooltip
-            placement="topLeft"
-            v-for="tag in tags"
-            :key="tag.id"
-            v-else
-          >
-            <template slot="title">
-              <span>{{ tag.postCount }} 篇文章</span>
-            </template>
-            <a-tag
-              color="blue"
-              style="margin-bottom: 8px"
-              @click="handleEditTag(tag)"
-            >{{ tag.name }}</a-tag>
-          </a-tooltip>
         </a-card>
       </a-col>
     </a-row>
